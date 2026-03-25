@@ -1,12 +1,18 @@
-#awaiting mount
-from textual.app import App
-from textual.widgets import Button,Welcome
+#Exiting
+from textual.app import App, ComposeResult
+from textual.widgets import Label, Button
 
-class WelcomeApp(App):
-    async def on_key(self) -> None:
-        await self.mount(Welcome())
-        self.query_one(Button).label = "YES!"
+class QuestionApp(App[str]):
+    def compose(self) -> ComposeResult:
+        yield Label("Do you Like Textual?")
+        yield Button("Yup" ,id="yes", variant="primary")
+        yield Button("No" ,id="no", variant="error")
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        self.exit(event.button.id)
 
 if __name__ == "__main__":
-    app = WelcomeApp()
-    app.run()
+    app = QuestionApp()
+    reply = app.run()
+    print(reply)
+                
