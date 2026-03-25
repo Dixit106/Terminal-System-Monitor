@@ -1,14 +1,15 @@
-#widgets learining
-from textual.app import App, ComposeResult
+#mounting this will do same but when i press a key
+from textual.app import App
 from textual.widgets import Welcome
 
 class WelcomeApp(App):
-    def compose(self) -> ComposeResult:
-        yield Welcome()
+    def on_key(self) -> None:
+        self.mount(Welcome())
 
     def on_button_pressed(self) -> None:
         self.exit()
 
 if __name__ == "__main__":
     app = WelcomeApp()
-    app.run()        
+    app.run()
+            
