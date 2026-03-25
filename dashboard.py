@@ -1,15 +1,12 @@
-#mounting this will do same but when i press a key
+#awaiting mount
 from textual.app import App
-from textual.widgets import Welcome
+from textual.widgets import Button,Welcome
 
 class WelcomeApp(App):
-    def on_key(self) -> None:
-        self.mount(Welcome())
-
-    def on_button_pressed(self) -> None:
-        self.exit()
+    async def on_key(self) -> None:
+        await self.mount(Welcome())
+        self.query_one(Button).label = "YES!"
 
 if __name__ == "__main__":
     app = WelcomeApp()
     app.run()
-            
