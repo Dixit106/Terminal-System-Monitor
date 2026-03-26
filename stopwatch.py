@@ -59,12 +59,26 @@ class Stopwatch(HorizontalGroup):
 
 class StopwatchApp(App):
     CSS_PATH = "stopwatch.tcss"
-    BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
+
+    BINDINGS = [("d", "toggle_dark", "Toggle dark mode"),
+                ("a", "add_stopwatch", "Add"),
+                ("r", "remove_stopwatch", "Remove"),
+                ]
 
     def compose(self) -> ComposeResult:
         yield Header()
         yield Footer()
-        yield VerticalScroll(Stopwatch(), Stopwatch(), Stopwatch())
+        yield VerticalScroll(Stopwatch(), Stopwatch(), Stopwatch(), id="timers")
+
+    def action_add_stopwatch(self) -> None:
+        new_stopwatch = Stopwatch()
+        self.query_one("#timers").mount(new_stopwatch)
+        new_stopwatch.scroll_visible()
+
+    def action_remove_stopwatch(self) -> None:
+        timers = self.query("Stopwatch")
+        if timers:
+            timers.last().remove()        
 
     def action_toggle_dark(self) -> None:
         self.theme = (
