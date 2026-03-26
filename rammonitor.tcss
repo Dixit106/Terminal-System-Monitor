@@ -3,5 +3,5 @@ RAMMonitor {
     color: cyan;
     content-align: center middle;
     width: 30;
-    height: 5;
+    height: 7;
 }

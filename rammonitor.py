@@ -11,12 +11,16 @@ class RAMMonitor(Static):
 
     def update_ram(self) -> None:
         #getting ram info using psutil
-        ram_percent = psutil.virtual_memory().percent 
+        ram = psutil.virtual_memory()
 
         #some maths to convert to gb
-        used_gb
+        ram_percent = ram.percent
+        used_gb = ram.used/(1024 ** 3)
+        free_gb = ram.available/(1024 ** 3)
 
-        self.update(f"RAM Usage: {ram_percent}%")
+        #.1f will make it show 1 decimal place only like 2.3gb
+        #\n to stack them neatly
+        self.update(f"RAM Usage: {ram_percent}%\nUsed: {used_gb:.1f} GB\nFree: {free_gb:.1f} GB")
 
 class RAMApp(App):
     #css conection to make it look a bit better 
