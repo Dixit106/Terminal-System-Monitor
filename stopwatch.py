@@ -1,6 +1,18 @@
 #Stopwatch 
 from textual.app import App, ComposeResult 
-from textual.widgets import  Footer, Header
+from textual.widgets import Button, Digits, Footer, Header
+from textual.containers import HorizontalGroup, VerticalScroll
+
+class TimeDisplay(Digits):
+    """A widget to display elapsed time."""
+
+class Stopwatch(HorizontalGroup):
+
+    def compose(self) -> ComposeResult:
+        yield Button("Start", id="start", variant="success")
+        yield Button("Stop", id="stop", variant="error")
+        yield Button("Reset", id="reset")
+        yield TimeDisplay("00:00:00.00")
 
 class StopwatchApp(App):
 
@@ -9,6 +21,7 @@ class StopwatchApp(App):
     def compose(self) -> ComposeResult:
         yield Header()
         yield Footer()
+        yield VerticalScroll(Stopwatch(), Stopwatch(), Stopwatch())
 
     def action_toggle_dark(self) -> None:
         self.theme = (
@@ -17,4 +30,4 @@ class StopwatchApp(App):
 
 if __name__ == "__main__":
     app = StopwatchApp()
-    app.run()          
+    app.run()     
