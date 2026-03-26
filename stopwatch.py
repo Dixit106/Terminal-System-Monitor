@@ -8,6 +8,12 @@ class TimeDisplay(Digits):
 
 class Stopwatch(HorizontalGroup):
 
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        if event.button.id == "start":
+            self.add_class("started")
+        elif event.button.id == "stop":
+            self.remove_class("started")
+
     def compose(self) -> ComposeResult:
         yield Button("Start", id="start", variant="success")
         yield Button("Stop", id="stop", variant="error")
