@@ -1,0 +1,7 @@
+BRAINTracker {
+    border: deeppink;
+    color: lime;
+    content-align: center middle;
+    width: 20;
+    height: 5;
+}
