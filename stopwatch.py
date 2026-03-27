@@ -68,7 +68,7 @@ class StopwatchApp(App):
     def compose(self) -> ComposeResult:
         yield Header()
         yield Footer()
-        yield VerticalScroll(Stopwatch(), Stopwatch(), Stopwatch(), id="timers")
+        yield VerticalScroll(Stopwatch(), id="timers")
 
     def action_add_stopwatch(self) -> None:
         new_stopwatch = Stopwatch()
