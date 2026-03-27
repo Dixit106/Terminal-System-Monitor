@@ -1,0 +1,8 @@
+AnimeArt {
+    content-align: center middle;
+    text-align:center;
+    border: heavy yellow;
+    color: orangered;
+    width: 100%;
+    height: 100%;
+}
