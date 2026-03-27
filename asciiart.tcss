@@ -3,6 +3,6 @@ AnimeArt {
     text-align:center;
     border: heavy yellow;
     color: orangered;
-    width: 100%;
-    height: 100%;
+    width: 36;
+    height: 16.9;
 }
