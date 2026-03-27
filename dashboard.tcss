@@ -4,13 +4,97 @@
 }
 
 /* kinda stretching widgets to fill their boxes */
-StopwatchApp, BRAINTracker, RAMMonitor, AnimeArt {
+Stopwatch, BRAINTracker, RAMMonitor, AnimeArt {
     width: 100%;
     height: 100%;
     content-align: center middle;
 }
 
-BRAINTracker { border: heavy cyan; }
-RAMMonitor { border: heavy magenta; }
-AnimeArt { border: heavy yellow; }
-StopwatchApp { border: heavy green; }
+
+
+
+
+/* stopwatch.tcss stuff */
+
+Stopwatch {
+    background: black;
+    height: 5;
+    margin: 1;
+    min-width: 50;
+    padding: 1;
+}
+
+TimeDisplay {
+    text-align: center;
+    color: white;
+    height: 4;
+}
+
+Button {
+    width: 16;
+}
+
+#start {
+    dock: left;
+}
+
+#stop {
+    dock: left;
+    display: none;
+}
+
+#reset {
+    dock: right;
+}
+
+.started {
+    background: $success-muted;
+    color: $text;
+}
+
+.started TimeDisplay {
+    color: $foreground;
+}
+
+.started #start {
+    display: none
+}
+
+.started #stop {
+    display: block
+}
+
+.started #reset {
+    visibility: hidden
+}
+
+/* cpumonitor.tcss */
+
+BRAINTracker {
+    border: deeppink;
+    color: lime;
+    content-align: center middle;
+    width: 20;
+    height: 5;
+}
+
+/* rammonitor.tcss */
+
+RAMMonitor {
+    border: heavy blue;
+    color: cyan;
+    content-align: center middle;
+    width: 30;
+    height: 7;
+}
+
+/* asciiart.tcss */
+
+AnimeArt {
+    content-align: center middle;
+    text-align:center;
+    border: heavy yellow;
+    color: orangered;
+    width: 36;
+    height: 16.9;
+}
