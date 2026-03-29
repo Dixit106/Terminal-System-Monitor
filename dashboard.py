@@ -1,7 +1,7 @@
 #importing
 from textual.app import App, ComposeResult 
 from textual.widgets import Header, Footer 
-from textual.containers import Grid 
+from textual.containers import Grid, VerticalScroll  
 
 #putting all tools i built here
 from stopwatch import Stopwatch  
@@ -23,10 +23,11 @@ class DashboardApp(App):
 
     #to make box layout for every tool
         with Grid(id="master_grid"):
-            yield Stopwatch()
+            yield AnimeArt()
             yield BRAINTracker()
             yield RAMMonitor()
-            yield AnimeArt()
+            with VerticalScroll(id="timers"):
+                yield Stopwatch()
         yield Footer()
 #
     def action_add_stopwatch(self) -> None:

@@ -4,7 +4,7 @@
 }
 
 /* kinda stretching widgets to fill their boxes */
-Stopwatch, BRAINTracker, RAMMonitor, AnimeArt {
+BRAINTracker, RAMMonitor, AnimeArt {
     width: 100%;
     height: 100%;
     content-align: center middle;
@@ -47,6 +47,12 @@ Button {
     dock: right;
 }
 
+#timers {
+    width: 100%;
+    height: 100%;
+    border: heavy green;
+}
+
 .started {
     background: $success-muted;
     color: $text;
@@ -73,9 +79,7 @@ Button {
 BRAINTracker {
     border: deeppink;
     color: lime;
-    content-align: center middle;
-    width: 20;
-    height: 5;
+  
 }
 
 /* rammonitor.tcss */
@@ -83,18 +87,14 @@ BRAINTracker {
 RAMMonitor {
     border: heavy blue;
     color: cyan;
-    content-align: center middle;
-    width: 30;
-    height: 7;
+  
 }
 
 /* asciiart.tcss */
 
 AnimeArt {
-    content-align: center middle;
-    text-align:center;
+ 
     border: heavy yellow;
     color: orangered;
-    width: 36;
-    height: 16.9;
+    
 }
