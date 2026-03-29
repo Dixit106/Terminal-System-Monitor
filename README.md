@@ -20,9 +20,9 @@
 
 ***Images :-***
 
-![Image1](/home/dixit/system-monitor/images/ss1.png)
+![Image1](images/ss1.png)
 
-![Image2](/home/dixit/system-monitor/images/ss2.png)
+![Image2](images/ss2.png)
 
 
 
