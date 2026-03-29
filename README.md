@@ -22,7 +22,7 @@
 
 ![Image1](/home/dixit/system-monitor/images/ss1.png)
 
-![](/home/dixit/system-monitor/images/ss2.png)
+![Image2](/home/dixit/system-monitor/images/ss2.png)
 
 
 
@@ -38,4 +38,8 @@ Just Clone It (you know the deal)
 
 Once cloned, run these quick commands to get it going: 
 
-```bash , python -m venv venv, source venv/bin/activate, pip install textual psutil, python dashboard.py
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install textual psutil
+python dashboard.py
