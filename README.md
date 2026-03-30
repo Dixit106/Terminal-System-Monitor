@@ -41,4 +41,4 @@ Then, launch it anytime by typing:
 `arasaka-eye`
 
 ### Website 
-https://pypi.org/project/arasaka-eye/0.1.0/
+https://pypi.org/project/arasaka-eye/
