@@ -33,13 +33,12 @@ You can contribute in this by adding your own widgets that you feel are useful a
 
 
 ***Deployment :-***
+### Installation
+Just open your terminal and run:
+`pip install arasaka-eye`
 
-Just Clone It (you know the deal)
+Then, launch it anytime by typing:
+`arasaka-eye`
 
-Once cloned, run these quick commands to get it going: 
-
-```bash
-python -m venv venv
-source venv/bin/activate
-pip install textual psutil
-python dashboard.py
+### Website 
+https://pypi.org/project/arasaka-eye/0.1.0/
